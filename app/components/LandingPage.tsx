@@ -62,7 +62,7 @@ export default function LandingPage() {
             >
               <Link
                 href="/projects"
-                className="px-8 py-3 bg-transparent font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-400/50 border-2 transition-colors"
+                className="px-8 py-3 bg-transparent font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:shadow-blue-400/50 border-2"
                 style={{ 
                   color: '#5B8EC4',
                   borderColor: '#5B8EC4'
@@ -72,7 +72,7 @@ export default function LandingPage() {
               </Link>
               <Link
                 href="/about"
-                className="px-8 py-3 bg-transparent font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-400/50 border-2 transition-colors"
+                className="px-8 py-3 bg-transparent font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-400/50 border-2 transition-all duration-300"
                 style={{ 
                   color: '#5B8EC4',
                   borderColor: '#5B8EC4'
