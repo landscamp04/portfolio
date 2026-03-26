@@ -7,45 +7,45 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header 
-      className="fixed top-0 left-0 right-0 shadow-lg z-50"
-      style={{ backgroundColor: '#5B8EC4' }}
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10"
+      style={{ backgroundColor: 'rgba(1, 1, 1, 0.85)', backdropFilter: 'blur(8px)' }}
     >
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-center ">
-          {/* Logo/Title 
-          <Link href="/" className="text-xl font-semibold text-white hover:text-blue-200 transition-colors">
-            Landon Campos | Portfolio
-          </Link>
-          */}
-          {/* Navigation Tabs */}
-          <nav className="flex gap-12 justify-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Brand */}
+        <Link
+          href="/"
+          className="font-coolveticatext-sm font-bold tracking-widest text-white hover:text-cyan-400 transition-colors"
+        >
+          Landon Campos | Portfolio
+        </Link>
+
+        {/* Nav */}
+        <nav className="flex gap-10">
+          {[
+            { label: 'ABOUT', href: '/about' },
+            { label: 'PROJECTS', href: '/projects' },
+          ].map(({ label, href }) => (
             <Link
-              href="/about"
-              className={`text-base font-bold transition-colors hover:text-blue-200 pb-1 ${
-                pathname === '/about' ? 'text-white border-b-2 border-white' : 'text-blue-100'
+              key={href}
+              href={href}
+              className={`text-xs font-bold tracking-widest transition-colors pb-1 ${
+                pathname === href
+                  ? 'text-white border-b-2 border-white'
+                  : 'text-gray-400 hover:text-white'
               }`}
             >
-              ABOUT ME
+              {label}
             </Link>
-            <Link
-              href="/projects"
-              className={`text-base font-bold transition-colors hover:text-blue-200 pb-1 ${
-                pathname === '/projects' ? 'text-white border-b-2 border-white' : 'text-blue-100'
-              }`}
-            >
-              PORTFOLIO
-            </Link>
-            <Link
-              href="/contact"
-              className={`text-base font-bold transition-colors hover:text-blue-200 pb-1 ${
-                pathname === '/contact' ? 'text-white border-b-2 border-white' : 'text-blue-100'
-              }`}
-            >
-              CONTACT
-            </Link>
-          </nav>
-        </div>
+          ))}
+        </nav>
+
+        {/* CTA */}
+        <Link
+          href="/contact"
+          className="text-xs font-bold tracking-widest px-5 py-2 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-200"
+        >
+          CONTACT ME
+        </Link>
       </div>
     </header>
   );

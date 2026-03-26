@@ -35,16 +35,16 @@ export default function Footer() {
   const duplicatedSkills = [...skills, ...skills, ...skills, ...skills];
 
   return (
-    <footer 
-      className="fixed bottom-0 left-0 right-0 py-2 overflow-hidden z-40 opacity-100"
+    <footer
+      className="fixed bottom-0 left-0 right-0 py-2 overflow-hidden z-40 border-t border-white/10"
+      style={{ backgroundColor: 'rgba(1,1,1,0.35)' , backdropFilter: 'blur(8px)'}}
     >
       <div className="relative">
         <div className="flex animate-marquee whitespace-nowrap">
           {duplicatedSkills.map((skill, index) => (
             <div
               key={`${skill.name}-${index}`}
-              className="flex items-center gap-2 mx-10 text-color"
-              style={{ color: '#5B8EC4' }}
+              className="flex items-center gap-2 mx-10 text-cyan-400"
             >
               <skill.icon size={12} />
               <span className="text-sm font-medium">{skill.name}</span>

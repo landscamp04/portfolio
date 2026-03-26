@@ -2,17 +2,13 @@ import { HiDownload } from 'react-icons/hi';
 
 export default function ResumeButton() {
     return (
-        <div className="inline-block" style={{ willChange: 'transform' }}>
-            <a
+        <a
             href="/LC_RESUME_2026.pdf"
             download="LC_RESUME_2026.pdf"
-            style={{ backgroundColor: '#5B8EC4'}}
-            className="inline-flex items-center gap-2 px-6 py-3 border-color text-white font-semibold rounded-lg hover:bg-blue-800 transition-all shadow-md hover:shadow-lg hover:scale-105"
-            
-            >
-                <HiDownload size={20} />
-                <span>Download Resume</span>
-            </a>
-        </div>
+            className="inline-flex items-center gap-2 px-6 py-2.5 border border-cyan-400 text-cyan-400 text-xs font-bold tracking-widest hover:bg-cyan-400 hover:text-black transition-all duration-200"
+        >
+            <HiDownload size={16} />
+            <span>DOWNLOAD RESUME</span>
+        </a>
     );
 }

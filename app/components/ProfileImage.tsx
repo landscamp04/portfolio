@@ -8,8 +8,8 @@ export default function ProfileImage({ size = 500}: ProfileImageProps) {
     return (
         <div className="flex justify-top-left">
             <div
-            className="relative rounded-full overflow-hidden border-4 border-color shadow-black/30 shadow-lg"
-            style={{ color: '#5B8EC4',width: size, height: size }}
+            className="relative rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-lg shadow-black/50"
+            style={{ width: size, height: size }}
             >
                 <Image
                 src="/lc-headshot.jpg"

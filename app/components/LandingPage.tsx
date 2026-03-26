@@ -1,95 +1,82 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import SkillsMarquee from './AnimatedSkillsArc';
+import Header from './Header';
 
 export default function LandingPage() {
-  //const allSkills = ['Python', 'AWS', 'Azure', 'NextJS', '.NET', 'SQL', 'ArcGIS'];
-  const allSkills = [''];
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    // Show content after background fades in
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <motion.div
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #ffffff 0%, #f8fbff 30%, #e8f3ff 70%, #d0e7ff 100%)',
-      }}
+      className="min-h-screen flex flex-col relative overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #010101 0%, #002338 100%)' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1.2 }}
     >
-      <div className="text-center z-10">
-        {/* Name - Simple fade in */}
+      <Header />
+
+      {/* Hero */}
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-6">
+        {/* Availability badge */}
+        <motion.div
+          className="flex items-center gap-2 mb-8"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+        </motion.div>
+
+        {/* Name */}
         <motion.h1
-          className="text-7xl font-helvetica font-bold mb-4"
-          style={{ color: '#5B8EC4' }}
+          className="text-7xl md:text-8xl font-extrabold leading-tight mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          Landon Campos
+          <span className="text-white">Landon </span>
+          <span style={{ color: '#22d3ee' }}>Campos</span>
         </motion.h1>
 
-        {/* Subtitle - appears after name */}
-        {showContent && (
-          <>
-            <motion.p
-              className="text-xl mb-8 font-light tracking-wide"
-              style={{ color: '#7BA3D9' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              Software Developer | GIS | AWS | .NET | JS
-            </motion.p>
+        {/* Subtitle */}
+        <motion.p
+          className="text-base md:text-lg text-gray-400 tracking-wide mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          Software Developer | GIS | AWS | .NET | JS | Py
+        </motion.p>
 
-            {/* Buttons */}
-            <motion.div
-              className="flex gap-6 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <Link
-                href="/projects"
-                className="px-8 py-3 bg-transparent font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:shadow-blue-400/50 border-2"
-                style={{ 
-                  color: '#5B8EC4',
-                  borderColor: '#5B8EC4'
-                }}
-              >
-                View Projects
-              </Link>
-              <Link
-                href="/about"
-                className="px-8 py-3 bg-transparent font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-400/50 border-2 transition-all duration-300"
-                style={{ 
-                  color: '#5B8EC4',
-                  borderColor: '#5B8EC4'
-                }}
-              >
-                About Me
-              </Link>
-            </motion.div>
-          </>
-        )}
+        {/* Buttons */}
+        <motion.div
+          className="flex items-center gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+        >
+          <Link
+            href="/projects"
+            className="text-sm font-bold tracking-widest px-8 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-200"
+          >
+            VIEW PROJECTS
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm font-bold tracking-widest text-gray-300 hover:text-cyan-400 transition-all ease-in-out duration-200"
+          >
+            ABOUT ME
+          </Link>
+        </motion.div>
       </div>
 
-      {/* Subtle grain/texture overlay */}
-      <div className="absolute inset-0 opacity-5 bg-noise pointer-events-none" />
-
-      {/* Skills marquee across top */}
-      <SkillsMarquee skills={allSkills} />
+      {/* Scroll indicator */}
+      <motion.div
+        className="flex flex-col items-center gap-3 pb-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+      >
+      </motion.div>
     </motion.div>
   );
 }

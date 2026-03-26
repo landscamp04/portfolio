@@ -7,7 +7,7 @@ const projects = [
     title: 'Firexplorer',
     description:
       'an interactive wildfire exposure web application for California communities. Users can search any city, adjust a proximity radius, and instantly see 25 years of nearby wildfire activity sourced from CAL FIRE mapped perimeter data. As the map is panned, the data updates in real time — no searching required. Each location receives a risk score based on fire frequency, cumulative acreage burned, and proximity, with safety suggestions tailored to that score. ',
-    tags: ['ArcGIS', 'Python', 'Next.js', 'Vercel', 'GIS'],
+    tags: ['ArcGIS SDK for JS', 'TypeScript', 'Next.js'],
     image: '/linkedin-mapview.png',
     links: [
       {
@@ -26,23 +26,23 @@ export default function ProjectsPage() {
   return (
     <div
       className="min-h-screen"
-      style={{
-        background: 'linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #f0f7ff 85%, #dbeafe 100%)',
-      }}
+      style={{ background: 'linear-gradient(180deg, #010101 0%, #002338 100%)' }}
     >
       <Header />
-      <main className="pt-24 pb-24">
+      <main className="pt-28 pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-4xl font-bold mb-2" style={{ color: '#1e3a5f' }}>
-            Portfolio
-          </h1>
-          <p className="text-gray-500 mb-12 text-lg">A selection of projects I&apos;ve built.</p>
+
+          {/* Heading */}
+          <p className="text-xs font-bold tracking-widest text-cyan-400 mb-2">WHAT I&apos;VE BUILT</p>
+          <h1 className="text-4xl font-extrabold text-white mb-1">Portfolio</h1>
+          <div className="w-12 h-0.5 bg-cyan-400 mb-12" />
 
           <div className="grid grid-cols-1 gap-10">
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="rounded-2xl overflow-hidden shadow-md border border-blue-100 bg-white flex flex-col md:flex-row"
+                className="overflow-hidden border border-white/10 flex flex-col md:flex-row transition-all duration-300 hover:border-cyan-400/40 hover:shadow-lg hover:shadow-cyan-400/10"
+                style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}
               >
                 {/* Image */}
                 <div className="relative w-full md:w-[420px] shrink-0 h-64 md:h-auto">
@@ -58,18 +58,18 @@ export default function ProjectsPage() {
                 {/* Content */}
                 <div className="flex flex-col justify-between p-8 flex-1">
                   <div>
-                    <h2 className="text-2xl font-bold mb-3" style={{ color: '#1e3a5f' }}>
+                    <h2 className="text-2xl font-extrabold text-white mb-3">
                       {project.title}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed mb-5">{project.description}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 text-sm rounded-full font-medium"
-                          style={{ backgroundColor: '#e8f3ff', color: '#5B8EC4' }}
+                          className="px-3 py-1 text-xs font-bold tracking-wider border border-cyan-400/40 text-cyan-400"
+                          style={{ backgroundColor: 'rgba(34,211,238,0.08)' }}
                         >
                           {tag}
                         </span>
@@ -78,15 +78,14 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-4">
                     {project.links.map((link) => (
                       <a
                         key={link.label}
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-5 py-2 rounded-lg font-semibold border-2 transition-all duration-300 hover:shadow-md hover:shadow-blue-300/50"
-                        style={{ color: '#5B8EC4', borderColor: '#5B8EC4' }}
+                        className="text-xs font-bold tracking-widest px-6 py-2.5 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-200"
                       >
                         {link.label}
                       </a>
