@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/fonts/Coolvetica Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme inline {
+  --font-coolvetica: 'Coolvetica', sans-serif;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #1e293b;

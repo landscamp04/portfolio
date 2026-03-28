@@ -14,7 +14,7 @@ export default function Header() {
         {/* Brand */}
         <Link
           href="/"
-          className="font-coolveticatext-sm font-bold tracking-widest text-white hover:text-cyan-400 transition-colors"
+          className="text-base text-sm font-bold tracking-widest text-white hover:text-cyan-400 transition-colors"
         >
           Landon Campos | Portfolio
         </Link>
@@ -24,6 +24,7 @@ export default function Header() {
           {[
             { label: 'ABOUT', href: '/about' },
             { label: 'PROJECTS', href: '/projects' },
+            { label: 'CERTIFICATIONS', href: '/certifications' },
           ].map(({ label, href }) => (
             <Link
               key={href}
