@@ -26,7 +26,7 @@ export default function CertificationsPage() {
         <div className="max-w-6xl mx-auto px-6">
 
           {/* Heading */}
-          <p className="text-xs font-bold tracking-widest text-cyan-400 mb-2">CREDENTIALS</p>
+          <p className="text-xs font-bold tracking-widest text-cyan-400 mb-2">Courses &</p>
           <h1 className="text-4xl font-extrabold text-white mb-1">Certifications</h1>
           <div className="w-12 h-0.5 bg-cyan-400 mb-12" />
 
