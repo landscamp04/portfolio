@@ -8,6 +8,11 @@ const certifications = [
     image: '/Unity-Badge.png',
     url: 'https://www.credly.com/users/landon-campos/badges#credly',
   },
+  {
+    title: 'PMI Kickoff',
+    image: '/Kickoff-Badge.png',
+    url: 'https://www.credly.com/users/landon-campos/badges#credly',
+  },
 ];
 
 export default function CertificationsPage() {
