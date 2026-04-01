@@ -13,6 +13,13 @@ const certifications = [
     image: '/Kickoff-Badge.png',
     url: 'https://www.credly.com/users/landon-campos/badges#credly',
   },
+  {
+    title: 'ESRI MOOC - Going Places with Spatial Analysis',
+    image: '/MOOC-Cert.png',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    url: 'MOOC-Cert.png'
+  },
 ];
 
 export default function CertificationsPage() {
