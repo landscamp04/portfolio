@@ -13,7 +13,7 @@ import {
   SiGit,
   SiArcgis
 } from 'react-icons/si';
-import { TbMapSearch, TbCloud } from 'react-icons/tb';
+import { TbCloud } from 'react-icons/tb';
 
 const skills = [
   { name: 'Python', icon: SiPython },
@@ -36,15 +36,15 @@ export default function Footer() {
 
   return (
     <footer
-      className="fixed bottom-0 left-0 right-0 py-2 overflow-hidden z-40 border-t border-white/10"
-      style={{ backgroundColor: 'rgba(1,1,1,0.35)' , backdropFilter: 'blur(8px)'}}
+      className="fixed bottom-0 left-0 right-0 py-2 overflow-hidden z-40 border-t border-gray-700/80"
+      style={{ backgroundColor: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)' }}
     >
       <div className="relative">
         <div className="flex animate-marquee whitespace-nowrap">
           {duplicatedSkills.map((skill, index) => (
             <div
               key={`${skill.name}-${index}`}
-              className="flex items-center gap-2 mx-10 text-cyan-400"
+              className="flex items-center gap-2 mx-10 text-gray-300"
             >
               <skill.icon size={12} />
               <span className="text-sm font-medium">{skill.name}</span>
@@ -69,4 +69,3 @@ export default function Footer() {
     </footer>
   );
 }
-
