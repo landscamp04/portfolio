@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Image from 'next/image';
@@ -6,7 +9,7 @@ const projects = [
   {
     title: 'Firexplorer',
     description:
-      'an interactive wildfire exposure web application for California communities. Users can search any city, adjust a proximity radius, and instantly see 25 years of nearby wildfire activity sourced from CAL FIRE mapped perimeter data. As the map is panned, the data updates in real time — no searching required. Each location receives a risk score based on fire frequency, cumulative acreage burned, and proximity, with safety suggestions tailored to that score. ',
+      'An interactive wildfire exposure web application for California communities. Users can search any city, adjust a proximity radius, and instantly see 25 years of nearby wildfire activity sourced from CAL FIRE mapped perimeter data. As the map is panned, the data updates in real time — no searching required. Each location receives a risk score based on fire frequency, cumulative acreage burned, and proximity, with safety suggestions tailored to that score.',
     tags: ['ArcGIS SDK for JS', 'TypeScript', 'Next.js'],
     image: '/linkedin-mapview.png',
     links: [
@@ -23,6 +26,12 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleDescription = (title: string) => {
+    setExpanded((prev) => ({ ...prev, [title]: !prev[title] }));
+  };
+
   return (
     <div
       className="min-h-screen"
@@ -58,10 +67,30 @@ export default function ProjectsPage() {
                 {/* Content */}
                 <div className="flex flex-col justify-between p-8 flex-1">
                   <div>
-                    <h2 className="text-2xl font-extrabold text-white mb-3">
+                    <h2 className="text-2xl font-extrabold text-white mb-4">
                       {project.title}
                     </h2>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
+
+                    {/* Expandable description */}
+                    <button
+                      onClick={() => toggleDescription(project.title)}
+                      className="flex items-center gap-2 text-xs font-bold tracking-widest text-cyan-400 hover:text-cyan-300 transition-colors duration-200 mb-4"
+                    >
+                      <span>{expanded[project.title] ? 'Collapse Description' : 'Expand Project Description'}</span>
+                      <span
+                        className={`inline-block transition-transform duration-300 ${
+                          expanded[project.title] ? 'rotate-180' : ''
+                        }`}
+                      >
+                        ▼
+                      </span>
+                    </button>
+
+                    {expanded[project.title] && (
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6 animate-in fade-in duration-200">
+                        {project.description}
+                      </p>
+                    )}
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-8">
@@ -101,4 +130,3 @@ export default function ProjectsPage() {
     </div>
   );
 }
-
