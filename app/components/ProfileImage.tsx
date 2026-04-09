@@ -8,7 +8,7 @@ export default function ProfileImage({ size = 500}: ProfileImageProps) {
     return (
         <div className="flex justify-top-left">
             <div
-            className="relative rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-lg shadow-black/50"
+            className="relative rounded-full overflow-hidden border-2 border-gray-400 shadow-lg shadow-black/20"
             style={{ width: size, height: size }}
             >
                 <Image

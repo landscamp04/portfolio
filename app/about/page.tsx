@@ -7,22 +7,19 @@ import AboutImage from '../components/aboutImage';
 
 export default function AboutPage() {
   return (
-    <div
-      className="relative min-h-screen"
-      style={{ background: 'linear-gradient(180deg, #010101 0%, #002338 100%)' }}
-    >
+    <div className="relative min-h-screen bg-white">
       <Header />
 
-      <main className="pt-28 pb-24">
-        {/* Page heading */}
-        <div className="max-w-7xl mx-auto px-6 mb-12">
-          <p className="text-xs font-bold tracking-widest text-cyan-400 mb-2">WHO I AM</p>
-          <h1 className="text-4xl font-extrabold text-white">About Me</h1>
-          <div className="mt-3 w-12 h-0.5 bg-cyan-400" />
-        </div>
+      <main className="pt-28 pb-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto bg-neutral-50 rounded-2xl shadow-xl shadow-black/10 border border-gray-200/90 p-8 sm:p-10">
+          {/* Page heading */}
+          <div className="mb-12">
+            <p className="text-xs font-bold tracking-widest text-gray-500 mb-2">WHO I AM</p>
+            <h1 className="text-4xl font-extrabold text-gray-900">About Me</h1>
+            <div className="mt-3 w-12 h-0.5 bg-gray-900" />
+          </div>
 
-        {/* Two-column layout */}
-        <div className="max-w-7xl mx-auto px-6">
+          {/* Two-column layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* Left Column */}
@@ -32,24 +29,24 @@ export default function AboutPage() {
                 <div className="flex-shrink-0">
                   <ProfileImage size={110} />
                 </div>
-                <p className="text-gray-300 text-base leading-relaxed">
-                  I&apos;m <span className="font-bold text-white">Landon Campos</span>, a
+                <p className="text-gray-700 text-base leading-relaxed">
+                  I&apos;m <span className="font-bold text-gray-900">Landon Campos</span>, a
                   Software Developer specializing in GIS
                   and education technology.
                 </p>
               </div>
 
               {/* Sections */}
-              <div className="space-y-8 text-gray-300 text-sm leading-relaxed">
+              <div className="space-y-8 text-gray-700 text-sm leading-relaxed">
                 <div>
-                  <h3 className="text-base font-bold tracking-widest text-cyan-400 mb-3">BACKGROUND</h3>
+                  <h3 className="text-base font-bold tracking-widest text-gray-500 mb-3">BACKGROUND</h3>
                   <p>
                     I&apos;m a SoCal native who is passionate about technology, snowboarding, fitness, and sports. Although I still have two semesters left until graduation, I am already gaining valuable experience within professional environments and projects at ITPI, working on the MAP Initiative.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold tracking-widest text-cyan-400 mb-3">THE TURNING POINT</h3>
+                  <h3 className="text-base font-bold tracking-widest text-gray-500 mb-3">THE TURNING POINT</h3>
                   <p className="mb-3">
                     Leading up to September 2024, I was the typical SDE, grinding leetcode, brainstorming apps to build, and looking to gain a SDE internship. However, during September, the Line Fire ignited less than a quarter mile from my house in Highland, CA.
                   </p>
@@ -65,7 +62,7 @@ export default function AboutPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-base font-bold tracking-widest text-cyan-400 mb-3">WHAT DRIVES ME</h3>
+                  <h3 className="text-base font-bold tracking-widest text-gray-500 mb-3">WHAT DRIVES ME</h3>
                   <p>
                     I believe the best solutions come from open minds and serendipitous problem solving. Beyond code and maps, I enjoy working within teams, and I&apos;m committed to always getting better — whether that&apos;s in the gym, on the slopes, or maintaining the habits that keep me sharp.
                   </p>

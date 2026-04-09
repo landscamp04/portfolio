@@ -7,8 +7,7 @@ import Header from './Header';
 export default function LandingPage() {
   return (
     <motion.div
-      className="min-h-screen flex flex-col relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #010101 0%, #002338 100%)' }}
+      className="min-h-screen flex flex-col relative overflow-hidden bg-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
@@ -28,18 +27,18 @@ export default function LandingPage() {
 
         {/* Name */}
         <motion.h1
-          className="text-7xl md:text-8xl font-extrabold leading-tight mb-6"
+          className="text-7xl md:text-8xl font-extrabold leading-tight mb-6 text-gray-900 drop-shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <span className="text-white">Landon </span>
-          <span style={{ color: '#22d3ee' }}>Campos</span>
+          <span>Landon </span>
+          <span className="text-black">Campos</span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
-          className="text-base md:text-lg text-gray-400 tracking-wide mb-12"
+          className="text-base md:text-lg text-gray-600 tracking-wide mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -49,20 +48,20 @@ export default function LandingPage() {
 
         {/* Buttons */}
         <motion.div
-          className="flex items-center gap-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
         >
           <Link
             href="/projects"
-            className="text-sm font-bold tracking-widest px-8 py-3 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-200"
+            className="text-sm font-bold tracking-widest px-8 py-3 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-200"
           >
             VIEW PROJECTS
           </Link>
           <Link
             href="/about"
-            className="text-sm font-bold tracking-widest text-gray-300 hover:text-cyan-400 transition-all ease-in-out duration-200"
+            className="text-sm font-bold tracking-widest text-gray-700 hover:text-black transition-all ease-in-out duration-200"
           >
             ABOUT ME
           </Link>
@@ -80,4 +79,3 @@ export default function LandingPage() {
     </motion.div>
   );
 }
-
